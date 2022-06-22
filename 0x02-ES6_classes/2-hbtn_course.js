@@ -39,7 +39,7 @@ export default class HolbertonCourse {
     if (typeof Students === 'object') {
       for (const student in Students) {
         if (typeof student !== 'string') {
-          throw new TypeError('Students must contain only strings');
+          throw new TypeError('Students must be an array');
         }
       }
     } else {
