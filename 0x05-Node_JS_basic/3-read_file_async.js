@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function countStudents (path) {
+function countStudents(path) {
   const promise = new Promise((resolve, reject) => {
     fs.readFile(path, 'utf-8', (error, results) => {
       if (error) {
@@ -20,14 +20,14 @@ function countStudents (path) {
               if (!fields[field]) {
                 fields[field] = {
                   count: 1,
-                  students: [fname]
+                  students: [fname],
                 };
               } else {
                 const newCount = fields[field].count + 1;
                 const newStudents = fields[field].students.concat(fname);
                 fields[field] = {
                   count: newCount,
-                  students: newStudents
+                  students: newStudents,
                 };
               }
             }
