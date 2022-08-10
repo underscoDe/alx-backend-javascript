@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function countStudents (path) {
+function countStudents(path) {
   try {
     const results = fs.readFileSync(path, { encoding: 'utf8' }).split(/\r?\n/);
     const lines = results;
@@ -15,14 +15,14 @@ function countStudents (path) {
         if (!fields[field]) {
           fields[field] = {
             count: 1,
-            students: [fname]
+            students: [fname],
           };
         } else {
           const newCount = fields[field].count + 1;
           const newStudents = (fields[field].students).concat(fname);
           fields[field] = {
             count: newCount,
-            students: newStudents
+            students: newStudents,
           };
         }
       }
